@@ -3,7 +3,8 @@ import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 import TarjetaEpisodio from "../componentes/episodios/tarjeta-episodio.componente";
 
 /**
- * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
+ * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con 
+ * la lista de episodios en los que aparece
  * 
  * EL TRABAJO SOBRE ESTE ARCHIVO ES OPCIONAL Y NO ES REQUISITO DE APROBACION
  * 

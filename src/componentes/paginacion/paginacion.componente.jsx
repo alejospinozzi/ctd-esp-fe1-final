@@ -1,4 +1,7 @@
 import './paginacion.css';
+import { useEffect } from "react";
+import { loadCharacters, charactersSlice } from "./slices";
+import { useAppSelector, useAppDispatch } from "./hooks";
 
 /**
  * Componente que contiene los botones para paginar
@@ -8,11 +11,23 @@ import './paginacion.css';
  * 
  * @returns un JSX element 
  */
+    
 const Paginacion = () => {
 
+    
+
+    const dispatch = useAppDispatch();
+
+    function nextPage() {
+        dispatch(charactersSlice.actions.nextPage());
+    }
+
+    function prevPage() {
+        dispatch(charactersSlice.actions.prevPage());
+    }
     return <div className="paginacion">
-        <button disabled={true} className={"primary"}>Anterior</button>
-        <button disabled={false} className={"primary"}>Siguiente</button>
+        <button onClick={prevPage} className={"primary"}>Anterior</button>
+        <button onClick={nextPage} className={"primary"}>Siguiente</button>
     </div>
 }
 
