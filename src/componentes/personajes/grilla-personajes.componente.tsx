@@ -23,11 +23,13 @@ const GrillaPersonajes = () => {
         dispatch(loadCharacters());
     }, [offset]);
 
-    const listWithCharacters = characters.filter((character) => favorite.includes(character.id));
+    const listWithFavorites = characters.filter((character) => favorite.includes(character.id));
 
     return <div className="grilla-personajes">
         {characters.map((character) => (
-          characters />
+            characters.description
+            characters.image
+            characters.url />
         ))}
     </div>
 }

@@ -4,3 +4,4 @@ export const getCharacters = async (params: Record<string, string> = {}) => {
     );
     return response.json();
 };
+

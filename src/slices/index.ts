@@ -9,15 +9,22 @@ export type ListCharacter = {
     characters: ICharacter[];
     loading: boolean;
     offset: number;
-    cart: number[];
+    favorites: number[];
 };
 
 const initialState: ListCharacter = {
     characters: [],
     offset: 0,
     loading: false,
-    cart: [],
+    favorites: [],
 };
+
+const timeout = (ms: number) =>
+    new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(null);
+    }, ms);
+});
 
 export const loadCharacters = createThunk<ICharacter[], void>(
     "Characters/fetchCharacters",
@@ -42,10 +49,10 @@ export const charactersSlice = createSlice({
             state.offset -= LIMIT;
         },
         addToCart: (state, action: { payload: number }) => {
-            state.favorite = [...state.favorite, action.payload];
+            state.favorites = [...state.favorites, action.payload];
         },
         removeFromCart: (state, action: { payload: number }) => {
-            state.favorite = state.favorite.filter((id) => id !== action.payload);
+            state.favorites = state.favorites.filter((id) => id !== action.payload);
         },
         },
         extraReducers: (builder) => {

@@ -12,8 +12,9 @@ export interface LoadCharacterAction extends Action{
 }
 
 export interface AddFavoriteAction extends Action {
+    description: any;
     type: "ADD_FAVORITE";
-    description: string;
+    id: number;
 }
 
 export interface DeleteFavoriteAction extends Action {
@@ -30,10 +31,10 @@ export interface DeletingFavoriteErrorAction extends Action {
     error: string;
 }
 
-export const updateSearch: ActionCreator<UpdateSearchAction> = (characters: ICharacter[]) => {
+export const updateSearch: ActionCreator<UpdateSearchAction> = (search: string) => {
     return {
         type: "UPDATE_SEARCH",
-        description,
+        search,
     };
 };
 
@@ -44,10 +45,10 @@ export const loadCharacters: ActionCreator<LoadCharacterAction> = (characters: I
     };
 };
 
-export const AddFavorite: ActionCreator<AddFavoriteAction> = (description: string) => {
+export const AddFavorite: ActionCreator<AddFavoriteAction> = (id: number) => {
     return {
         type: "ADD_FAVORITE",
-        search,
+        id,
     };
 };
 
