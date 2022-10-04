@@ -7,8 +7,8 @@ export const addFavorite =(favorite:Result):FavoriteAction => {
     }
 }
 
-export const removeFavorite =(id:number):FavoriteAction => {
+export const deleteFavorite =(id:number):FavoriteAction => {
     return{
-        type:"REMOVE_FAVORITE", id: id
+        type:"DELETE_FAVORITE", id: id
     }
 }

@@ -4,7 +4,6 @@ import TarjetaPersonaje from './tarjeta-personaje.componente';
 import { useDispatch } from 'react-redux';
 import { getAllCharacters } from '../../actions/thunkAction';
 import { useSelector } from '../../store/store';
-import { log } from 'console';
 
 /**
  * Grilla de personajes para la pagina de inicio
@@ -28,7 +27,7 @@ const GrillaPersonajes = () => {
 
     return <div className="grilla-personajes">
         {personajes?.map((character) => (
-            <TarjetaPersonaje element={character}/>
+            <TarjetaPersonaje character={character}/>
         ))} 
     </div>
 }

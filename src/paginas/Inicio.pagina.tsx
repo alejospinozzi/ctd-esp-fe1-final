@@ -1,7 +1,7 @@
 import Filtros from "../componentes/personajes/filtros.componente"
 import GrillaPersonajes from "../componentes/personajes/grilla-personajes.componente"
 import Paginacion from "../componentes/paginacion/paginacion.componente";
-import React,{  RefObject, useRef } from "react";
+import {  RefObject, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { getFilteredCharacters } from "../actions/thunkAction";
 /**

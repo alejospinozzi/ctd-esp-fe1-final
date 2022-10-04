@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { addFavorite } from '../../actions/favoriteAction';
 import './boton-favorito.css';
 /**
  * Boton que indica si un elemento es favorito o no, y da la posibilidad de marcarlo/desmarcarlo
@@ -10,10 +12,14 @@ import './boton-favorito.css';
 interface prop {esFavorito: Boolean; onClick?: void;}
 
 const BotonFavorito = ({esFavorito, onClick}:prop) => {
+
+    const dispatch = useDispatch()
     const src = esFavorito ? "/imagenes/star-filled.png" : "/imagenes/star.png"
 
     return <div className="boton-favorito">
-        <img src={src} alt={"favorito"} />
+        <img src={src} alt={"favorito"} 
+        // onClick={()=>esFavorito ? dispatch(deleteFavorite(favorites.id)):dispatch(addFavorite(favorites))} 
+        />
     </div>
 }
 

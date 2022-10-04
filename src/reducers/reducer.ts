@@ -33,3 +33,28 @@ export const reducer:Reducer<ContenedorPadre> =
             return state;
     }
 } 
+
+/**
+ * Reducer used to handle the favorite actions
+ * 
+ * @author Spinozzi Alejo Marcelo
+ * @param {Result} state 
+ * @param {AnyAction}action 
+ * @returns 
+ */
+
+export const favoritesReducer:Reducer<Result[]> = 
+(state:Result[] = [], action: AnyAction) =>{
+    switch(action.type){
+        case "ADD_FAVORITE":
+            return [...state,{...action.data, isFavorite: true}];
+        case "DELETE_FAVORITE":
+            return [...action.data];
+        case "CLEAN_FAVORITE":
+            return [];
+        default:
+            return state;
+    }
+} 
+
+

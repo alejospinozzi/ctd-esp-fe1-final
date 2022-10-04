@@ -3,13 +3,14 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
 import {TypedUseSelectorHook, useSelector as useReduxSelector,} from "react-redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
-import { reducer } from "../reducers/reducer";
+import { favoritesReducer, reducer } from "../reducers/reducer";
 
 
 
 
 const rootReducer = combineReducers({
     getCharacters: reducer,
+    favorites: favoritesReducer,
 });
 
 export type IRootState = ReturnType<typeof rootReducer>;

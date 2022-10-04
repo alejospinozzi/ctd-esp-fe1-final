@@ -2,6 +2,7 @@ import './paginacion.css';
 import { useDispatch } from 'react-redux';
 import { useSelector } from '../../store/store';
 import { getChangePage } from '../../actions/thunkAction';
+import { Info } from '../../types/character';
 
 
 /**
@@ -17,7 +18,7 @@ const Paginacion = () => {
 
     const dispatch = useDispatch()
 
-    const page= useSelector( store =>{return store.getCharacters.info})
+    const page:Info = useSelector( store =>{return store.getCharacters.info})
 
     return<div>
         <button disabled={page.prev === null} onClick={()=> dispatch(getChangePage(page.prev))} className={"primary"}>Anterior</button>

@@ -7,17 +7,17 @@ import './tarjeta-personaje.css';
  * 
  * Deberás agregar las propiedades necesarias para mostrar los datos de los personajes
  * 
- * @param {Result} element
+ * @param {Result} character
  * @returns un JSX element 
  */
-interface props {element: Result}
+interface props {character: Result}
 
-const TarjetaPersonaje = ({element}:props) => {
+const TarjetaPersonaje = ({character}:props) => {
 
     return <div className="tarjeta-personaje">
-        <img src={element.image} alt={element.name}/>
+        <img src={character.image} alt={character.name}/>
         <div className="tarjeta-personaje-body">
-            <span>{element.name}</span>
+            <span>{character.name}</span>
             <BotonFavorito esFavorito={false}/>
         </div>
     </div>
