@@ -1,3 +1,4 @@
+import { Result } from '../../types/character';
 import BotonFavorito from '../botones/boton-favorito.componente';
 import './tarjeta-personaje.css';
 
@@ -9,13 +10,15 @@ import './tarjeta-personaje.css';
  * 
  * @returns un JSX element 
  */
-const TarjetaPersonaje = () => {
+interface props {element: Result}
+
+const TarjetaPersonaje = ({element}:props) => {
 
     return <div className="tarjeta-personaje">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez"/>
+        <img src={element.image} alt={element.name}/>
         <div className="tarjeta-personaje-body">
-            <span>Rick Sanchez</span>
-            <BotonFavorito esFavorito={false} onClick={Onclick}/>
+            <span>{element.name}</span>
+            <BotonFavorito esFavorito={false}/>
         </div>
     </div>
 }

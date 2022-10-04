@@ -1,16 +1,24 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { charactersSlice } from "../slices";
+import {combineReducers} from "@reduxjs/toolkit";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
+import {TypedUseSelectorHook, useSelector as useReduxSelector,} from "react-redux";
+import { composeWithDevTools } from "@redux-devtools/extension";
+import { reducer } from "../reducers/reducer";
+
+
+
 
 const rootReducer = combineReducers({
-    characters: charactersSlice.reducer,
+    getCharacters: reducer,
 });
 
-const store = configureStore({
-    reducer: rootReducer,
-    devTools: process.env.NODE_ENV !== "production",
-});
+export type IRootState = ReturnType<typeof rootReducer>;
 
-export default store;
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+// Tipamos el hook useSelector
+export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector
+
+
+export const store = createStore(
+    rootReducer, composeWithDevTools(applyMiddleware(thunk)) // Aqui aplicaremos los middlewares
+)
