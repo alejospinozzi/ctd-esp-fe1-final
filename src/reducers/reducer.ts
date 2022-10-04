@@ -14,9 +14,9 @@ const contenedorInicial:ContenedorPadre ={
 /**
  * Reducer used to show characters
  * 
- * @author Spinozzi Alejo
- * @param {payloadData} state 
- * @param {AnyAction}action 
+ * @author Spinozzi Alejo Marcelo
+ * @param {ContenedorPadre} state 
+ * @param {AnyAction} action 
  * @returns 
  */
 

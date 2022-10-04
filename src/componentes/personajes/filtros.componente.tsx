@@ -1,9 +1,6 @@
-import { CombinedState, Action } from '@reduxjs/toolkit';
 import { RefObject } from 'react';
 import { useDispatch } from 'react-redux';
-import { ThunkAction } from 'redux-thunk';
 import { getFilteredCharacters } from '../../actions/thunkAction';
-import { Result } from '../../types/character';
 import './filtros.css';
 
 

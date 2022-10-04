@@ -7,7 +7,7 @@ import './tarjeta-personaje.css';
  * 
  * Deberás agregar las propiedades necesarias para mostrar los datos de los personajes
  * 
- * 
+ * @param {Result} element
  * @returns un JSX element 
  */
 interface props {element: Result}

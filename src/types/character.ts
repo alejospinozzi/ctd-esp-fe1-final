@@ -1,3 +1,12 @@
+import { AnyAction } from "@reduxjs/toolkit";
+
+
+export interface FavoriteAction extends AnyAction{
+    payload?:Result
+    type:string;    
+    id?:number
+}
+
 export interface ContenedorPadre {
     info:    Info;
     results: Result[];
